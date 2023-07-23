@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "user_uuid": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1",
+      "username": "Tanishka Makode",
+      "handle": "tanishkamakode",
+      "bio": "Exploring the realms of code and literature!",
+      "link": "https://linktr.ee/tanishkamakode",
+      "img": "https://images.unsplash.com/photo-1620232224149-25be08bdec08",
+      "instagram_url": "https://www.instagram.com/tanishka.makode/",
+      "followers": [
+        {
+          "user_uuid": "132c0172-6771-4268-96de-f3d803251059"
+        },
+        {
+          "user_uuid": "f6ec8326-9303-4cac-90da-9e654c80fbfc"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "user_uuid": "132c0172-6771-4268-96de-f3d803251059",
+      "username": "Cake Bee",
+      "handle": "cakebee",
+      "bio": "If you like cakes, look no further!",
+      "link": "https://www.cakebee.in",
+      "img": "https://cakebee.in/cdn/shop/files/Logo_for_web_110x.jpg?v=1677832282",
+      "instagram_url": "https://www.instagram.com/cakebeein/",
+      "followers": [
+        {
+          "user_uuid": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1"
+        },
+        {
+          "user_uuid": "f6ec8326-9303-4cac-90da-9e654c80fbfc"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_uuid": "f6ec8326-9303-4cac-90da-9e654c80fbfc",
+      "username": "Totally Awesome Vegan Food Truck",
+      "handle": "tafoodtruck",
+      "bio": "TAVFT serves the RADDEST vegan junkfood on the PLANET!",
+      "link": "https://www.totallyawesomeveganfoodtruck.com",
+      "img": "https://images.unsplash.com/photo-1563861019306-9cccb83bdf0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZCUyMHRydWNrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "instagram_url": "https://www.instagram.com/totallyawesomeveganfoodtruck/",
+      "followers": [
+        {
+          "user_uuid": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1"
+        },
+        {
+          "user_uuid": "132c0172-6771-4268-96de-f3d803251059"
+        }
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "id": 0,
+      "timestamp": "Sat Jul 22 2023 10:13:07 GMT+0530 (India Standard Time)",
+      "thread_from": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Hello world (of threads)",
+      "likes": [
+        {
+          "uuid": "f6ec8326-9303-4cac-90da-9e654c80fbfc"
+        },
+        {
+          "uuid": "132c0172-6771-4268-96de-f3d803251059"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "timestamp": "Thu Jul 20 2023 06:13:07 GMT+0530 (India Standard Time)",
+      "thread_from": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "NGL, Threads > Twitter",
+      "likes": [
+        {
+          "uuid": "132c0172-6771-4268-96de-f3d803251059"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "timestamp": "Thu Jul 20 2023 18:49:08 GMT+0530 (India Standard Time)",
+      "thread_from": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Tbh, 2019 was my fav year! Post pandemic years are absolute mess! ",
+      "likes": []
+    },
+    {
+      "id": 3,
+      "timestamp": "Thu Jul 20 2023 18:49:08 GMT+0530 (India Standard Time)",
+      "thread_from": "132c0172-6771-4268-96de-f3d803251059",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Unpopular opinion : Black forest is overhyped...",
+      "likes": [
+        {
+          "uuid": "f6ec8326-9303-4cac-90da-9e654c80fbfc"
+        },
+        {
+          "uuid": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "timestamp": "Thu Jul 20 2023 20:49:08 GMT+0530 (India Standard Time)",
+      "thread_from": "c33a9136-8410-4203-ae71-dbcfa4d3d0f1",
+      "thread_to": "132c0172-6771-4268-96de-f3d803251059",
+      "reply_to": 3,
+      "text": "Agreed!",
+      "likes": [
+        {
+          "uuid": "132c0172-6771-4268-96de-f3d803251059"
+        }
+      ]
+    }
+  ]
+}

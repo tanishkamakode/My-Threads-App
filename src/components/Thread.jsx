@@ -1,24 +1,87 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import moment from "moment/moment";
 
-const Thread = () => {
+const Thread = ({
+  user,
+  filteredThread,
+  setOpenPopUp,
+  getThreads,
+  setInteractingThread,
+}) => {
+  const [replyLength, setReplyLength] = useState(null);
+
+  const timePassed = moment().startOf("day").fromNow(filteredThread.timestamp);
+
+  const handleClick = () => {
+    setOpenPopUp(true);
+    setInteractingThread(filteredThread);
+  };
+
+  const postLike = async () => {
+    const hasBeenLikedByUser = filteredThread.likes?.some(
+      (like) => like.user_uuid === user.user_uuid
+    );
+    if (!hasBeenLikedByUser) {
+      filteredThread.likes.push({
+        user_uuid: user.user_uuid,
+      });
+
+      try {
+        const response = await fetch(
+          `http://localhost:3000/threads/${filteredThread.id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(filteredThread),
+          }
+        );
+        const result = await response.json();
+        // console.log("success", result);
+        getThreads();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  const getRepliesLength = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/threads?reply_to=${filteredThread?.id}`
+      );
+      const data = await response.json();
+      setReplyLength(data.length);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getRepliesLength();
+  }, [filteredThread]);
+
   return (
     <article className="feed-card">
       <div className="text-container">
         <div>
           <div className="img-container">
-            <img src="" alt="profile avatar" />
+            <img src={user.img} alt="profile avatar" />
           </div>
           <div>
             <p>
-              <strong>handle</strong>
+              <strong>{user.handle}</strong>
             </p>
-            <p className="sub-text">text</p>
+            <p className="thread-text">{filteredThread.text}</p>
           </div>
         </div>
-        <p>time</p>
+        <p className="sub-text">{timePassed} ago</p>
       </div>
       <div className="icons">
         <svg
+          onClick={postLike}
           clipRule="evenodd"
           fillRule="evenodd"
           strokeLinejoin="round"
@@ -32,6 +95,7 @@ const Thread = () => {
           />
         </svg>
         <svg
+          onClick={handleClick}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -57,7 +121,8 @@ const Thread = () => {
         </svg>
       </div>
       <p className="sub-text">
-        <span>X replies</span> • <span>X likes</span>
+        <span onClick={handleClick}>{replyLength} replies</span> •{" "}
+        <span>{filteredThread.likes.length} likes</span>
       </p>
     </article>
   );

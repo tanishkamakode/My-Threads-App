@@ -1,11 +1,17 @@
 import React from "react";
 
-const ThreadInput = () => {
+const ThreadInput = ({ user, text, setText, postThread }) => {
   return (
     <>
-      <p></p>
-      <input type="text" />
-      <button className="primary">Post</button>
+      <p>{user.handle}</p>
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        type="text"
+      />
+      <button className="primary" onClick={postThread}>
+        Post
+      </button>
     </>
   );
 };
